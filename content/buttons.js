@@ -147,12 +147,20 @@
 
     function scrollButtonClicked(ev) {
         if (!buttonsActive) return;
-
+        
+        var scrollto = 0;
+        var top_fixed_margin = 80;
+        var window_height = window.innerHeight - top_fixed_margin;
         if (ev.target.getAttribute('id') === 'und-addon-play-btn-up') {
-            scrollTo(window, 0);
+       
+            scrollto =  Math.max( 0, window.pageYOffset - window_height);
+            scrollTo(window, scrollto)
+            //scrollTo(window, 0);
         } else {
-            scrollTo(window, getDocumentHeight())
+             scrollto =  Math.min(getDocumentHeight(), window.pageYOffset + window_height);
+            //scrollTo(window, getDocumentHeight())
         }
+        scrollTo(window,  scrollto)
     }
 
     function createButtons(options) {

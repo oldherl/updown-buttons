@@ -1,9 +1,9 @@
 {
-    "manifest_version": 2,
-    "name": "Top and Bottom scroll buttons",
-    "short_name": "Scroll buttons",
+    "manifest_version": 1,
+    "name": "Page up and down scroll buttons",
+    "short_name": "Page Scroll buttons",
     "version": "1.7.6",
-    "description": "Adds scroll to Top and Bottom buttons on all sites",
+    "description": "Adds scroll to Page Up and Down buttons on all sites",
     "icons": {
         "48": "img\/icon-48.png",
         "128": "img\/icon-128.png"

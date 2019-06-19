@@ -1,5 +1,5 @@
 {
-    "manifest_version": 1,
+    "manifest_version": 2,
     "name": "Page up and down scroll buttons",
     "short_name": "Page Scroll buttons",
     "version": "1.7.6",

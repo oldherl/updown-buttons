@@ -11,7 +11,8 @@ var undOptionsStorage = new function(){
         size:     36,
         scroll:   'instant',
         display:  'always',
-        position: 'right'
+        position: 'right',
+        scroll_dead_zone: 80
     };
 
     this.save = function(newOptions) {

@@ -149,8 +149,8 @@
         if (!buttonsActive) return;
         
         var scrollto = 0;
-        var top_fixed_margin = 80;
-        var window_height = window.innerHeight - top_fixed_margin;
+        var top_fixed_margin = options.scroll_dead_zone;
+        var window_height = Math.max(window.innerHeight - top_fixed_margin, 10);
         if (ev.target.getAttribute('id') === 'pund-addon-play-btn-up') {
        
             scrollto =  Math.max( 0, window.pageYOffset - window_height);

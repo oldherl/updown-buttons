@@ -33,9 +33,4 @@
         "<all_urls>",
         "storage"
     ],
-    "applications": {
-        "gecko": {
-            "id": "{d8c7bd7f-3e7d-456a-be71-29973917ec72}"
-        }
-    }
 }

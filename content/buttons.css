@@ -1,4 +1,4 @@
-.und-addon-play-btn {
+.pund-addon-play-btn {
 	transition-property: opacity;
 	transition-duration: 0.5s;
 	opacity: 0.45;
@@ -13,28 +13,28 @@
     display: none;
 }
 
-.und-addon-btn-hoverable:hover {
+.pund-addon-btn-hoverable:hover {
 	opacity: 1 !important;
 }
 
-.und-addon-play-btn:active {
+.pund-addon-play-btn:active {
     opacity: 1 !important;
 }
 
-.und-addon-play-btn:focus {
+.pund-addon-play-btn:focus {
 	opacity: initial !important;
 }
 
-.und-addon-play-side-left {
+.pund-addon-play-side-left {
 	float: right;
 	border-radius: 0 5px 5px 0;
 }
 
-.und-addon-play-side-bottom {
+.pund-addon-play-side-bottom {
 	border-radius: 5px 5px 0 0;
 }
 
-#und-addon-container {
+#pund-addon-container {
 	display: block;
 	position: fixed;
 	top: 40%;
@@ -47,7 +47,7 @@
 }
 
 @media print {
-	#und-addon-container {
+	#pund-addon-container {
 		display: none !important;
 	}
 }

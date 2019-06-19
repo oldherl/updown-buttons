@@ -48,7 +48,7 @@
         }
         applyCss(btn, style);
 
-        btn.className = 'und-addon-play-btn und-addon-play-side-' + options.position + (isMobile() ? ' ' : ' und-addon-btn-hoverable');
+        btn.className = 'pund-addon-play-btn pund-addon-play-side-' + options.position + (isMobile() ? ' ' : ' pund-addon-btn-hoverable');
     }
 
     function applyCss(dom, style) {
@@ -61,7 +61,7 @@
             browser.extension.getURL :
             chrome.runtime.getURL;
 
-        btn.setAttribute('id', 'und-addon-play-btn-' + buttonType);
+        btn.setAttribute('id', 'pund-addon-play-btn-' + buttonType);
         btn.style.backgroundImage = "url('" + getImgUrl("img/arrow-" + buttonType + ".svg") + "')";
         applyBtnOptions(buttonType, btn, options);
         container.appendChild(btn);
@@ -70,7 +70,7 @@
 
     function createContainerDom(options) {
         container = document.createElement('span');
-        container.setAttribute('id', 'und-addon-container');
+        container.setAttribute('id', 'pund-addon-container');
 
         applyContainerOptions(options);
         document.body.appendChild(container);
@@ -151,7 +151,7 @@
         var scrollto = 0;
         var top_fixed_margin = 80;
         var window_height = window.innerHeight - top_fixed_margin;
-        if (ev.target.getAttribute('id') === 'und-addon-play-btn-up') {
+        if (ev.target.getAttribute('id') === 'pund-addon-play-btn-up') {
        
             scrollto =  Math.max( 0, window.pageYOffset - window_height);
             scrollTo(window, scrollto)
@@ -310,10 +310,10 @@
      * needed whe add-on get's reloaded
      */
     function removeOld() {
-        var old = document.getElementById('und-addon-container');
+        var old = document.getElementById('pund-addon-container');
         if (old) old.parentNode.removeChild(old);
 
-        old = document.body.getElementsByClassName('und-addon-play-btn');
+        old = document.body.getElementsByClassName('pund-addon-play-btn');
         if (!old || !old.length) return;
         for (var o = old.length-1; o >= 0; o--) {
             if (!old.hasOwnProperty(o)) continue;

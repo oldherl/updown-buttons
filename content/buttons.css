@@ -1,0 +1,53 @@
+.und-addon-play-btn {
+	transition-property: opacity;
+	transition-duration: 0.5s;
+	opacity: 0.45;
+	height: 36px;
+	width: 36px;
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.7);
+	background-size: 45%;
+	background-position: center;
+	background-repeat: no-repeat;
+    border-radius: 5px 0 0 5px;
+    display: none;
+}
+
+.und-addon-btn-hoverable:hover {
+	opacity: 1 !important;
+}
+
+.und-addon-play-btn:active {
+    opacity: 1 !important;
+}
+
+.und-addon-play-btn:focus {
+	opacity: initial !important;
+}
+
+.und-addon-play-side-left {
+	float: right;
+	border-radius: 0 5px 5px 0;
+}
+
+.und-addon-play-side-bottom {
+	border-radius: 5px 5px 0 0;
+}
+
+#und-addon-container {
+	display: block;
+	position: fixed;
+	top: 40%;
+	right: 0;
+	width: 100px;
+	height: 100px;
+	z-index: 10000;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+@media print {
+	#und-addon-container {
+		display: none !important;
+	}
+}

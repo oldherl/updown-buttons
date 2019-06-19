@@ -1,0 +1,41 @@
+{
+    "manifest_version": 2,
+    "name": "Top and Bottom scroll buttons",
+    "short_name": "Scroll buttons",
+    "version": "1.7.6",
+    "description": "Adds scroll to Top and Bottom buttons on all sites",
+    "icons": {
+        "48": "img\/icon-48.png",
+        "128": "img\/icon-128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "options\/options-storage.js",
+                "content\/buttons.js"
+            ],
+            "css": [
+                "content\/buttons.css"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        "img\/arrow-up.svg",
+        "img\/arrow-dn.svg"
+    ],
+    "options_ui": {
+        "page": "options\/options.html"
+    },
+    "permissions": [
+        "<all_urls>",
+        "storage"
+    ],
+    "applications": {
+        "gecko": {
+            "id": "{d8c7bd7f-3e7d-456a-be71-29973917ec72}"
+        }
+    }
+}

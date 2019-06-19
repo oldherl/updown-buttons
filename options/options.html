@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="/content/buttons.css">
+    <style>
+        .line {
+            margin-bottom: 15px;
+        }
+
+        .line:last-child {
+            margin-bottom: 0;
+        }
+
+        .title {
+            width: 100px;
+            text-align: right;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .title:after{
+            content: ":";
+        }
+
+        input {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        label {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        #preview-pan, #info-pan {
+            border-top: 1px solid #c1c1c1;
+            margin-top: 25px;
+            padding-top: 10px;
+            max-width: 350px;
+        }
+
+        .preview {
+            width: 36px;
+            height: 36px;
+            vertical-align: top;
+            position: relative;
+            margin-top: 5px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .multi-line {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        #apply-msg {
+            display: none;
+            margin-left: 5px;
+            margin-bottom: 15px;
+            color: #62ae16;
+        }
+
+        #reset {
+            color: blue;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-top: 5px;
+        }
+
+        .und-addon-play-btn.preview {
+            transition: opacity 0.5s;
+        }
+
+        .position-controls b {
+            font-weight: normal;
+            display: inline-block;
+            min-width: 16px;
+            text-align: center;
+        }
+
+        #info-pan {
+            text-align: center;
+        }
+
+        #donate-btn {
+            color: white;
+            background-color: #E76E65;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            border-radius: 3px;
+            margin-top: 15px;
+        }
+
+        #donate-btn:hover {
+            background-color: #ed584e;
+        }
+
+        @media screen and (max-width: 480px) {
+            .title {
+                width: auto;
+                text-align: left;
+                margin-right: 0;
+                font-weight: bold;
+                display: block;
+            }
+
+            .line-group {
+                display: block;
+            }
+
+            input {
+                vertical-align: top;
+                margin-top: 5px;
+                margin-left: 0;
+            }
+
+            label {
+                vertical-align: top;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<form>
+    <div id="apply-msg">
+        &#10004; Changes saved. <span id="reset">Reset to default</span>
+    </div>
+    <div id="msg-placeholder" style="margin-bottom: 15px;">&nbsp;</div>
+
+    <div class="line">
+        <span class="title">Size</span>
+        <input id="opt-size" name="size" type=range min=25 max=100 step=1>
+        <label for="opt-size" id="opt-size-val"></label>
+    </div>
+
+    <div class="line">
+        <span class="title">Transparency</span>
+        <input id="opt-opacity" name="opacity" type=range min=0 max=100 step=10>
+        <label for="opt-opacity" id="opt-opacity-val"></label>
+    </div>
+
+    <div class="line">
+        <span class="title">Location</span>
+
+        <div class="multi-line position-controls">
+            <input type="radio" name="position" id="position-right" value="right">
+            <label for="position-right" class="radio-label"><b>&rarrb;</b> Right</label>
+
+            <br>
+            <input type="radio" name="position" id="position-left" value="left">
+            <label for="position-left" class="radio-label"><b>&larrb;</b> Left</label>
+
+            <br>
+            <input type="radio" name="position" id="position-bottom" value="bottom">
+            <label for="position-bottom" class="radio-label">
+                <b class="hide-on-mobile">&DownArrowBar;</b>
+                <b class="hide-on-desktop">&darr;</b>
+                Bottom
+            </label>
+        </div>
+
+    </div>
+
+    <div class="line">
+        <span class="title">Display</span>
+
+        <div class="multi-line">
+            <div class="line-group">
+                <input type="radio" name="display" id="display-always" value="always">
+                <label for="display-always" class="radio-label">Always</label>
+            </div>
+
+            <div class="line-group hide-on-mobile">
+                <input type="radio" name="display" id="display-auto-hide" value="auto-hide">
+                <label for="display-auto-hide" class="radio-label">Hide until the mouse is nearby</label>
+            </div>
+
+            <div class="line-group">
+                <input type="radio" name="display" id="display-edge" value="edge">
+                <label for="display-edge" class="radio-label">Only the edges until focused</label>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="line">
+        <span class="title">Scrolling</span>
+
+        <div class="multi-line">
+            <input type="radio" name="scroll" id="scroll-smooth" value="smooth">
+            <label for="scroll-smooth" class="radio-label">Smooth</label>
+
+            <br>
+            <input type="radio" name="scroll" id="scroll-instant" value="instant">
+            <label for="scroll-instant" class="radio-label">Instant</label>
+        </div>
+    </div>
+
+    <div class="line" id="preview-pan">
+        <span class="title">Preview</span>
+
+        <div class="und-addon-play-btn preview"></div>
+    </div>
+
+    <!--div class="line" id="info-pan">
+        <a href="https://www.patreon.com/bePatron?c=1341734&rid=2714517" target="_blank" id="donate-btn">&#10084; Donate</a>
+    </div-->
+</form>
+
+<script src="options-storage.js"></script>
+<script src="options.js"></script>
+
+</body>
+
+</html>

@@ -9,7 +9,7 @@ var undOptionsStorage = new function(){
     var defaultOptions = {
         opacity:  60,
         size:     36,
-        scroll:   'smooth',
+        scroll:   'instant',
         display:  'always',
         position: 'right'
     };

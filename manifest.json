@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Page up and down scroll buttons",
     "short_name": "Page Scroll buttons",
-    "version": "1.7.6",
+    "version": "1.7.7",
     "description": "Adds scroll to Page Up and Down buttons on all sites",
     "icons": {
         "48": "img\/icon-48.png",

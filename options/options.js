@@ -48,10 +48,6 @@ function rangeChanged(ev) {
 function updatePreview() {
     var preview = document.getElementsByClassName('preview')[0];
 
-    var getImgUrl = typeof browser !== 'undefined' ?
-        browser.extension.getURL :
-        chrome.runtime.getURL;
-
     var style = {
         'opacity': (undInt(options.opacity))/100,
         'width':   options.size + 'px',

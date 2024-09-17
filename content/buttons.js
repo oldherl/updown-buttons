@@ -61,9 +61,6 @@
         var btn = document.createElement('span');
         var nameToChar = {'up': '↑', 'dn': '↓'};
         var textnode = document.createTextNode( nameToChar[buttonType] );
-        var getImgUrl = typeof browser !== 'undefined' ?
-            browser.extension.getURL :
-            chrome.runtime.getURL;
 
         btn.setAttribute('id', 'pund-addon-play-btn-' + buttonType);
         btn.appendChild(textnode);

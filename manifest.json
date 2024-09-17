@@ -5,8 +5,7 @@
     "version": "1.7.8",
     "description": "Adds page up and down buttons on all sites. They are useful on low refresh rate devices such as e-ink tablets to reduce lagging.",
     "icons": {
-        "48": "img\/icon-48.png",
-        "128": "img\/icon-128.png"
+        "16": "img\/main-icon.svg"
     },
     "browser_specific_settings": {
         "gecko": {

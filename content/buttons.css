@@ -4,7 +4,7 @@
 	width: 36px;
 	cursor: pointer;
     border-radius: 5px 0 0 5px;
-    border: 3px solid black;
+    border: 2px solid black;
     visibility: hidden;
     color: black;
     text-shadow: 1px 1px 3px white, -1px 1px 3px white, 1px -1px 3px white, -1px -1px 3px white;

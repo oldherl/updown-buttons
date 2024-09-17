@@ -40,7 +40,7 @@
             'opacity': (undInt(options.opacity))/100,
             'width':   options.size + 'px',
             'height':  options.size + 'px',
-            'line-height':  options.size  + 'px',
+            'line-height':  options.size * 0.85 + 'px',
             'font-size':  options.size * 0.8 + 'px',
         };
 
@@ -59,7 +59,7 @@
 
     function createButtonDOM(buttonType, options) {
         var btn = document.createElement('span');
-        var nameToChar = {'up': '⇧', 'dn': '⇩'};
+        var nameToChar = {'up': '↑', 'dn': '↓'};
         var textnode = document.createTextNode( nameToChar[buttonType] );
         var getImgUrl = typeof browser !== 'undefined' ?
             browser.extension.getURL :

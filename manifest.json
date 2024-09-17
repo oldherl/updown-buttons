@@ -4,6 +4,10 @@
     "short_name": "Page up and down",
     "version": "1.7.8",
     "description": "Adds page up and down buttons on all sites. They are useful on low refresh rate devices such as e-ink tablets to reduce lagging.",
+    "homepage_url": "https://github.com/oldherl/updown-buttons",
+    "developer": {
+        "name": "oldherl"
+    },
     "icons": {
         "16": "img\/main-icon.svg"
     },

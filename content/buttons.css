@@ -1,16 +1,18 @@
 .pund-addon-play-btn {
-	transition-property: opacity;
-	transition-duration: 0.5s;
-	opacity: 0.45;
+	opacity: 1.0;
 	height: 36px;
 	width: 36px;
 	cursor: pointer;
-	background-color: rgba(0,0,0,0.7);
-	background-size: 45%;
-	background-position: center;
-	background-repeat: no-repeat;
     border-radius: 5px 0 0 5px;
-    display: none;
+    border: 3px solid black;
+    visibility: hidden;
+    color: black;
+    text-shadow: 1px 1px 3px white, -1px 1px 3px white, 1px -1px 3px white, -1px -1px 3px white;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    font-family: sans-serif;
+    user-select: none;
 }
 
 .pund-addon-btn-hoverable:hover {
@@ -42,7 +44,6 @@
 	width: 100px;
 	height: 100px;
 	z-index: 10000;
-	overflow: hidden;
 	box-sizing: border-box;
 }
 

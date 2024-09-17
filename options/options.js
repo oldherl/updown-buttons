@@ -53,10 +53,12 @@ function updatePreview() {
         chrome.runtime.getURL;
 
     var style = {
-        'opacity': ((100 - undInt(options.opacity))/100),
+        'opacity': (undInt(options.opacity))/100,
         'width':   options.size + 'px',
         'height':  options.size + 'px',
-        'background-image': "url('" + getImgUrl("img/arrow-up.svg") + "')"
+        'visibility':  'visible',
+        'line-height':  options.size + 'px',
+        'font-size':  options.size * 0.8 + 'px',
     };
     for (var s in style) if (style.hasOwnProperty(s)) preview.style[s] = style[s];
 }

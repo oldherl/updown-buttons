@@ -37,9 +37,11 @@
 
     function applyBtnOptions(buttonType, btn, options) {
         var style = {
-            'opacity': ((100 - undInt(options.opacity))/100),
+            'opacity': (undInt(options.opacity))/100,
             'width':   options.size + 'px',
-            'height':  options.size + 'px'
+            'height':  options.size + 'px',
+            'line-height':  options.size  + 'px',
+            'font-size':  options.size * 0.8 + 'px',
         };
 
         if (options.display === 'auto-hide') {
@@ -57,12 +59,14 @@
 
     function createButtonDOM(buttonType, options) {
         var btn = document.createElement('span');
+        var nameToChar = {'up': '⇧', 'dn': '⇩'};
+        var textnode = document.createTextNode( nameToChar[buttonType] );
         var getImgUrl = typeof browser !== 'undefined' ?
             browser.extension.getURL :
             chrome.runtime.getURL;
 
         btn.setAttribute('id', 'pund-addon-play-btn-' + buttonType);
-        btn.style.backgroundImage = "url('" + getImgUrl("img/arrow-" + buttonType + ".svg") + "')";
+        btn.appendChild(textnode);
         applyBtnOptions(buttonType, btn, options);
         container.appendChild(btn);
         return btn;
@@ -81,7 +85,7 @@
     function applyContainerOptions(options) {
         var sz  = undInt(options.size);
         var css = {
-            'height': sz*2 + 1 + 'px',
+            //'height': sz*2 + 1 + 'px',
             'width':  sz       + 'px',
             'right':  'auto',
             'left':   'auto',
@@ -211,10 +215,12 @@
             displayState.dn === showDn
         ) return;
 
-        up.style.display = showUp ? "block" : "none";
-        dn.style.display = showDn ? "block" : "none";
+        up.style.display = "block";
+        dn.style.display = "block";
+        up.style.visibility = showUp ? "visible" : "hidden";
+        dn.style.visibility = showDn ? "visible" : "hidden";
 
-        if (showDn) {
+/*        if (showDn) {
             var top   = 0;
             var left  = 0;
             if (options.position === 'bottom') {
@@ -225,9 +231,8 @@
             }
             dn.style.margin = top + ' 0 0 ' + left;
         }
-
-        if (!showUp && !showDn) container.style.display = 'none';
-        else container.style.display = 'block';
+*/
+        container.style.display = 'block';
 
         displayState.up = showUp;
         displayState.dn = showDn;

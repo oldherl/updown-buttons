@@ -1,13 +1,19 @@
 {
     "manifest_version": 2,
-    "name": "Page up and down scroll buttons",
-    "short_name": "Page Scroll buttons",
-    "version": "1.7.7",
-    "description": "Adds scroll to Page Up and Down buttons on all sites",
+    "name": "Page up and down buttons for e-ink",
+    "short_name": "Page up and down",
+    "version": "1.7.8",
+    "description": "Adds page up and down buttons on all sites. They are useful on low refresh rate devices such as e-ink tablets to reduce lagging.",
     "icons": {
         "48": "img\/icon-48.png",
         "128": "img\/icon-128.png"
     },
+    "browser_specific_settings": {
+        "gecko": {
+        "id": "updownbuttons@oldherl.one"
+        }
+    },
+
     "content_scripts": [
         {
             "matches": [
